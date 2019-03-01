@@ -43,5 +43,5 @@ Links
 * ZIP-Datei für das [Beta Repository][1]
 * ZIP Datei für das [Alfa Repository][2]
 
-[1]: https://kodirepo.mediathekview.de/repo-beta/repository.mediathekview-beta
-[2]: https://kodirepo.mediathekview.de/repo-alfa/repository.mediathekview-alfa
+[1]: https://kodirepo.mediathekview.de/repo-beta/repository.mediathekviewbeta/repository.mediathekviewbeta-1.0.zip
+[2]: https://kodirepo.mediathekview.de/repo-alfa/repository.mediathekviewalfa/repository.mediathekviewalfa-1.0.zip
