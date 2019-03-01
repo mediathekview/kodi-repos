@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addons>
-
 <addon id="repository.mediathekviewbeta"
 	name="MediathekView Beta Add-on repository"
 	version="1.0"
@@ -19,4 +17,3 @@
 		<description  lang="en_GB">The beta repository contains testing versions that have already been pre-tested by various members of the MediathekView team and are potential candidates for submission to the official Kodi Addon Repository. Using these versions is usually hassle-free.</description>
 	</extension>
 </addon>
-</addons>

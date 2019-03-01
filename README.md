@@ -14,7 +14,7 @@ werden können.
 
 Das Beta-Repository enthält Test-Versionen die bereits von mehreren
 Personen des MediathekView Teams getestet wurden und mögliche Kandidaten
-für eine Einreichung ins offizielle Kodi Addon Repository sind. DIe
+für eine Einreichung ins offizielle Kodi Addon Repository sind. Die
 Benutzung der dort angebotentn Versionen ist in der Regel problemlos.
 
 Das Alfa-Repository enthält sehr neue Test-Versionen die möglicherweise
