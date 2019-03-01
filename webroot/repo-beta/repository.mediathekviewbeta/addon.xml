@@ -15,5 +15,7 @@
 		<summary lang="en_GB">MediathekView Beta Addon Repository</summary>
 		<description  lang="de_DE">Das Beta-Repository enthält Test-Versionen die bereits von mehreren Personen des MediathekView Teams getestet wurden und mögliche Kandidaten für eine Einreichung ins offizielle Kodi Addon Repository sind. Die Benutzung der dort angebotentn Versionen ist in der Regel problemlos.</description>
 		<description  lang="en_GB">The beta repository contains testing versions that have already been pre-tested by various members of the MediathekView team and are potential candidates for submission to the official Kodi Addon Repository. Using these versions is usually hassle-free.</description>
+		<website>https://mediathekview.de/</website>
+		<email>info@mediathekview.de</email>
 	</extension>
 </addon>

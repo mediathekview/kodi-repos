@@ -14,6 +14,8 @@
 		<summary lang="de_DE">MediathekView Alpha Addon Repository</summary>
 		<summary lang="en_GB">MediathekView Alpha Addon Repository</summary>
 		<description  lang="de_DE">Das Alpha-Repository enthält sehr neue Test-Versionen die möglicherweise Problematisch sein könnten. Dieses Repository sollte nur von Experten genutzt werden, da die dort angebotene Software schwere Fehler enthalten kann.</description>
-		<description  lang="en_GB">This repository provides alpha versions of Kodi addons from MediathekView</description>
+		<description  lang="en_GB">The alpha repository contains very new test versions that may be potentially troublesome. This repository is for experts only, as the software offered there may have severe bugs.</description>
+		<website>https://mediathekview.de/</website>
+		<email>info@mediathekview.de</email>
 	</extension>
 </addon>
