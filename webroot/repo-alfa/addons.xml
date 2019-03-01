@@ -23,7 +23,7 @@
 </addon>
 <addon id="plugin.video.mediathekview"
 	name="MediathekView"
-	version="0.5.10"
+	version="0.5.11"
 	provider-name="MediathekView.de, Leo Moll">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
