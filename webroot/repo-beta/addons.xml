@@ -23,7 +23,7 @@
 </addon>
 <addon id="plugin.video.mediathekview"
 	name="MediathekView"
-	version="0.6.0"
+	version="0.6.2"
 	provider-name="MediathekView.de, Leo Moll">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0"/>
@@ -48,33 +48,21 @@
 		<description lang="de_DE">Ermöglicht den Zugriff auf fast alle deutschen Mediatheken der öffentlich Rechtlichen basierend auf der Datenbank von MediathekView.de</description>
 		<description lang="en_GB">Gives access to most video-platforms from German public service broadcasters using the database of MediathekView.de</description>
 		<description lang="it_IT">Fornisce l'accesso a gran parte delle piattaforme video operate dalle emittenti pubbliche tedesche usando la banca dati di MediathekView.de</description>
-		<news>v0.6.0 (2019-03-01):
+		<news>v.0.6.2 (2019-03-10):
+- Bugfix: Entpacken von GZ-Archiven auf FireTV 4K und ähnliche Geräte funktioniert nun wieder
+- Bugfix: mvupdate funktioniert nun wieder
+- Compliance: Code Kompatibilität für zukünftige Kodi Versionen mit Python 3
+v.0.6.1 (2019-03-08):
+- Bugfix: Fixed module exception due to case error
+v0.6.0 (2019-03-01):
 - Feature: Cache der Anfragen für lokale Datenbanken
 - Feature: Natives ultraschnelles Update für SQLite
 - Bugfix: Live Streams konnten heruntergeladen werden
 - Bugfix: Auf Kodi 18 hat der automatische Aktualisierungsmodus nicht mehr funktioniert
-v0.5.2 (2019-02-17):
 - Feature: Neue option --full um ein vollstndiges Update zu erzwingen
-v0.5.1 (2018-08-22):
 - Feature: Neue Aktualisierungsmethode "Zeitgesteuert"
 - Bugfix: Es war nicht möglich, den Aktualisierungsintervall bei der Methode "Automatisch" einzustellen
 - Feature: Passende Symbole für alle Menü-Einträge
-v0.5.0 (2018-08-08):
-- Bugfix: Bei manchen Filme fehlte im Kontext-Menü die Möglichkeit sie herunterzuladen
-- Feature: Old Maria DB / MySQL support
-- Feature: Datenbank-Downloads werden direkt nach der Verarbeitung gelöscht
-- Feature: Abspielen mit Untertitel wahlweise aus dem Kontext-Menü oder immer (Einstellung)
-- Feature: Letzte Suchvorgänge
-- Feature: Auflistung der Live-Streams beschleunigt
-- Feature: Möglichkeit eine Sendung als Film oder als Episode einer Serie herunterzuladen
-- Bugfix: Auf gewissen Systemen ist die Erzeugung der SQLite Datenbank fehlgeschlagen
-- Feature: Effizientere Datenbankstruktur
-- Feature: "mvupdate" hat die neuen Optionen --force und --intervall
-- Feature: Verschiedene Optionen bezüglich NFO-Dateien
-- Feature: Automatische Erkennung von Staffel und Folge
-- Feature: Verbesserte Download-Einstellungen
-- Feature: "Update bei Start" aktualisiert erst beim ersten Addon-Aufruf
-- Feature: Typ und Version der SQL Datenbank wird nun im Log angezeigt
 </news>
 		<platform>all</platform>
 		<language>de fr</language>
