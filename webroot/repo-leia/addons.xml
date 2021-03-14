@@ -22,10 +22,10 @@
 </addon>
 <addon id="plugin.video.mediathekview"
     name="MediathekView"
-    version="1.0.0+matrix.1"
+    version="1.0.0"
     provider-name="MediathekView.de, Leo Moll">
     <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.myconnpy" version="1.1.7"/>
     </requires>
     <extension
@@ -35,7 +35,8 @@
     </extension>
     <extension
         point="xbmc.service"
-        library="service.py"/>
+        library="service.py"
+        start="startup" />
     <extension point="xbmc.addon.metadata">
         <summary lang="de_DE">Öffentlich-Rechtliche Mediatheken</summary>
         <summary lang="en_GB">Public service video-platforms</summary>
@@ -44,13 +45,13 @@
         <description lang="en_GB">Gives access to most video-platforms from German public service broadcasters using the database of MediathekView.de</description>
         <description lang="it_IT">Fornisce l'accesso a gran parte delle piattaforme video operate dalle emittenti pubbliche tedesche usando la banca dati di MediathekView.de</description>
         <news>
-v.1.0.0 (2021-02-xx):
+v.1.0.0 (2021-03-14):
 - [fix] #125 fix for add to favorits
 - [new] #56 simple black list
-- [other] Database structure between mysql and sqlite aligned
-- [other] New UI icons and adjusted view
-- [other] Navigation for all channels moved into channel view
+- [other] New UI icons and adjusted view (Wall view)
 - [other] New extended search to filter all criteria
+- [other] Database structure between mysql and sqlite aligned
+- [other] Navigation for all channels moved into channel view
 - [other] Settings split into general (UI settings) and advanced settings for UI behaviour
 - [other] Code restructring
 
