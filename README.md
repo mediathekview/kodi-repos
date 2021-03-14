@@ -1,13 +1,13 @@
 Mediathekview Kodi Addon Repos
 ==============================
 
-Dieses Repository enthält die Alpha und Beta Repositories für das offizielle MediathekView Kodi Plugin.
+Dieses GITHUB Repository enthält verschieden Kodi Repositories für die installation des offizielle MediathekView Kodi Plugin.
 
-Da nicht jede Test-Version des Plugins in das offizielle Kodi Addon Repository überführt wird, stehen diese beiden Repositories all jenen zur Verfügung die Interesse an den neusten Entwicklungen des Plugins haben.
+Die stabilen Versionen für Kodi 19 (Matrix), Kodi 18 (Leia) und Kodi 17 (Krypton) können über die repositories bezogen werden. 
 
-Hierfür stehen zwei Repositories zur Verfügung, die in Kodi hinzugefügt werden können.
+Auch für Nightly / Entwicklungsversionen stehen hier zwei Repositories zur Verfügung.
 
-Das Beta-Repository enthält Test-Versionen die bereits von mehreren Personen des MediathekView Teams getestet wurden und mögliche Kandidaten für eine Einreichung ins offizielle Kodi Addon Repository sind. Die Benutzung der dort angebotentn Versionen ist in der Regel problemlos.
+Das Beta-Repository enthält Test-Versionen die bereits von mehreren Personen des MediathekView Teams getestet wurden. Die Benutzung der dort angebotentn Versionen ist in der Regel problemlos.
 
 Das Alfa-Repository enthält sehr neue Test-Versionen die möglicherweise Problematisch sein könnten. Dieses Repository sollte nur von Experten genutzt werden, da die dort angebotene Software schwere Fehler enthalten kann.
 
@@ -22,8 +22,13 @@ Nach der Installation kann die neuste Version des Plugins aus dem Repository ins
 Links
 -----
 
-* ZIP-Datei für das [Beta Repository][1]
-* ZIP Datei für das [Alfa Repository][2]
+* ZIP-Datei Kodi 19 (Matrix) [Matrix Repository][1]
+* ZIP Datei Kodi 17(Krypton) & Kodi 18 (Leia) [Leia Repository][2]
+* ZIP-Datei für das [Beta Repository][3]
+* ZIP Datei für das [Alfa Repository][4]
 
-[1]: https://kodirepo.mediathekview.de/repo-beta/repository.mediathekviewbeta/repository.mediathekviewbeta-1.0.zip
-[2]: https://kodirepo.mediathekview.de/repo-alfa/repository.mediathekviewalfa/repository.mediathekviewalfa-1.0.zip
+[1]: https://kodirepo.mediathekview.de/repo-matrix/repository.mediathekviewmatrix/repository.mediathekviewmatrix-1.0.zip
+[2]: https://kodirepo.mediathekview.de/repo-leia/repository.mediathekviewleia/repository.mediathekviewleia-1.0.zip
+[3]: https://kodirepo.mediathekview.de/repo-beta/repository.mediathekviewbeta/repository.mediathekviewbeta-1.0.zip
+[4]: https://kodirepo.mediathekview.de/repo-alfa/repository.mediathekviewalfa/repository.mediathekviewalfa-1.0.zip
+
