@@ -17,6 +17,9 @@ Danach überträgt man – falls nötig – die ZIP-Datei auf das Kodi Abspielge
 
 Im Bereich "Addons" wählt man den Menüpunkt "Aus ZIP-Datei installieren" aus. Aus dem darauf erscheinenden Dateibrowser kann man dann die ZIP-Datei des Repositories auswählen.
 
+Nach der Reporitory Installation, wird das Plugin installiert.
+Addons > Aus Repository installieren > Mediathekview stable … reporitoy > Video > Mediathekview
+
 Nach der Installation kann die neuste Version des Plugins aus dem Repository installiert werden. Selbstverständlich kommen auch Updates aus dem Repository mit der jeweils neusten Version.
 
 Links
