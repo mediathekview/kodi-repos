@@ -27,8 +27,8 @@ Links
 
 * ZIP-Datei Kodi 19 (Matrix) [Matrix Repository][1]
 * ZIP Datei Kodi 17(Krypton) & Kodi 18 (Leia) [Leia Repository][2]
-* ZIP-Datei für das [Beta Repository][3]
-* ZIP Datei für das [Alfa Repository][4]
+* ZIP-Datei Nightly Kodi 19 (Matrix) [Beta Repository][3]
+* ZIP Datei Nightly Kodi 17(Krypton) & Kodi 18 (Leia) [Alfa Repository][4]
 
 [1]: https://kodirepo.mediathekview.de/repo-matrix/repository.mediathekviewmatrix/repository.mediathekviewmatrix-1.0.zip
 [2]: https://kodirepo.mediathekview.de/repo-leia/repository.mediathekviewleia/repository.mediathekviewleia-1.0.zip
