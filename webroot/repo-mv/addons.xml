@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
 <addon id="repository.mediathekview"
 	name="MediathekView Stable Add-on Repository"
 	version="1.0.0"
@@ -37,3 +38,4 @@
 		</assets>
 	</extension>
 </addon>
+</addons>
