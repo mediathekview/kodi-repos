@@ -23,5 +23,6 @@ Links
 
 * ZIP-Datei Stable Repository [Stable Repository][1]
 * ZIP-Datei Preview Repository [Preview Repository][2]
+
 [1]: https://kodirepo.mediathekview.de/repo-mv/repository.mediathekview/repository.mediathekview-1.0.0.zip
 [2]: https://kodirepo.mediathekview.de/repo-mvp/repository.mediathekviewpreview/repository.mediathekviewpreview-1.0.0.zip
