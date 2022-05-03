@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.mediathekview"
+	name="MediathekView Stable Add-on Repository"
+	version="1.0.0"
+	provider-name="MediathekView">
+	<extension point="xbmc.addon.repository" name="MediathekView Stable Add-on Repository">
+		<dir>
+			<info>https://kodirepo.mediathekview.de/repo-mv/addons.xml</info>
+			<checksum>https://kodirepo.mediathekview.de/repo-mv/addons.xml.md5</checksum>
+			<datadir>https://kodirepo.mediathekview.de/repo-mv/</datadir>
+			<hashes>false</hashes>
+		</dir>
+		<dir maxversion="18.9.0">
+			<info>https://kodirepo.mediathekview.de/repo-leia/addons.xml</info>
+			<checksum>https://kodirepo.mediathekview.de/repo-leia/addons.xml.md5</checksum>
+			<datadir>https://kodirepo.mediathekview.de/repo-leia/</datadir>
+			<hashes>false</hashes>
+		</dir>
+		<dir minversion="19.0.0">
+			<info>https://kodirepo.mediathekview.de/repo-matrix/addons.xml</info>
+			<checksum>https://kodirepo.mediathekview.de/repo-matrix/addons.xml.md5</checksum>
+			<datadir>https://kodirepo.mediathekview.de/repo-matrix/</datadir>
+			<hashes>false</hashes>
+		</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="de_DE">MediathekView Stable Add-on Repository</summary>
+		<summary lang="en_GB">MediathekView Stable Add-on Repository</summary>
+		<description  lang="de_DE">Das Stable Repository enthält die aktuelle stabile Version des offiziellen MediathekView Kodi Add-ons.</description>
+		<description  lang="en_GB">The Stable repository contains the current stable version of the official MediathekView Kodi add-on.</description>
+		<website>https://mediathekview.de/</website>
+		<email>info@mediathekview.de</email>
+		<source>https://github.com/mediathekview/plugin.video.mediathekview</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>

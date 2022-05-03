@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="repository.mediathekviewbeta"
-	name="MediathekView Beta Add-on repository"
-	version="1.0"
-	provider-name="MediathekView">
-	<extension point="xbmc.addon.repository"
-		name="MediathekView Beta Add-on repository">
-		<info compressed="false">https://kodirepo.mediathekview.de/repo-beta/addons.xml</info>
-		<checksum>https://kodirepo.mediathekview.de/repo-beta/addons.xml.md5</checksum>
-		<datadir zip="true">https://kodirepo.mediathekview.de/repo-beta/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="de_DE">MediathekView Beta Addon Repository</summary>
-		<summary lang="en_GB">MediathekView Beta Addon Repository</summary>
-		<description  lang="de_DE">Das Beta-Repository enthält Test-Versionen die bereits von mehreren Personen des MediathekView Teams getestet wurden und mögliche Kandidaten für eine Einreichung ins offizielle Kodi Addon Repository sind. Die Benutzung der dort angebotentn Versionen ist in der Regel problemlos.</description>
-		<description  lang="en_GB">The beta repository contains testing versions that have already been pre-tested by various members of the MediathekView team and are potential candidates for submission to the official Kodi Addon Repository. Using these versions is usually hassle-free.</description>
-		<website>https://mediathekview.de/</website>
-		<email>info@mediathekview.de</email>
-	</extension>
-</addon>
 <addon id="plugin.video.mediathekview"
 	name="MediathekView"
 	version="1.0.8+matrix.1"
