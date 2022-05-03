@@ -6,7 +6,6 @@ Dieses GITHUB Repository enthält verschieden Kodi Repositories für die install
 Die stabilen Versionen für Kodi 19 (Matrix), Kodi 18 (Leia) und Kodi 17 (Krypton) können über die repositories bezogen werden. 
 
 Auch für Nightly / Entwicklungsversionen stehen hier zwei Repositories zur Verfügung.
-
 Das Beta-Repository enthält Test-Versionen die bereits von mehreren Personen des MediathekView Teams getestet wurden. Die Benutzung der dort angebotentn Versionen ist in der Regel problemlos. Es werden hier nur Kodi 19 (Matrix) Versionen veröffentlicht.
 
 Das Alfa-Repository enthält sehr neue Test-Versionen die möglicherweise Problematisch sein könnten. Dieses Repository sollte nur von Experten genutzt werden, da die dort angebotene Software schwere Fehler enthalten kann. Es werden hier nur Kodi 18/17 (Krypton/Leia) Versionen veröffentlicht.
