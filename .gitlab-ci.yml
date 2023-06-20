@@ -43,10 +43,11 @@ test:
   stage: testsyntax
   script:
     - echo "Prüfe xml Syntax"
-    - apk add --update --no-cache libxml2-utils
+    - apk add --update --no-cache libxml2-utils unzip
     - xmllint --noout source/*/*.xml
     - xmllint --noout webroot/*/*.xml
     - xmllint --noout webroot/*/*/*.xml
+    - find . -name '*.zip' -exec unzip -t {} \;
 
 
 notify-github-success:
