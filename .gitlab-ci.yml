@@ -16,8 +16,7 @@ notify-github-pending:
   stage: .prenotify
   when: always
   script:
-    - ls -la
-    - ls -la .ci/
+    - apk add --update --no-cache bash
     - .ci/notify_github.sh pending
 
 deploy2prod:
@@ -54,10 +53,12 @@ notify-github-success:
   stage: .postnotify
   when: on_success
   script:
+    - apk add --update --no-cache bash
     - .ci/notify_github.sh success
 
 notify-github-failure:
   stage: .postnotify
   when: on_failure
   script:
+    - apk add --update --no-cache bash
     - .ci/notify_github.sh failure
