@@ -1,6 +1,9 @@
 Mediathekview Kodi Addon Repos
 ==============================
 
+![Build Status](https://git.elaon.de/mv/kodi-repos/badges/master/pipeline.svg)
+
+
 Dieses GITHUB Repository enthält verschieden Kodi Repositories für die installation des offizielle MediathekView Kodi Plugin.
 
 Die stabilen Versionen für Kodi 20 (Nexus), Kodi 19 (Matrix), Kodi 18 (Leia) und Kodi 17 (Krypton) können über das "Stable Repository" bezogen werden. 

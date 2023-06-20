@@ -1,0 +1,59 @@
+image: alpine
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  PROD_ZIEL: /var/www/kodirepo.mediathekview.de/web/
+
+stages:
+  - .prenotify
+  - testsyntax
+  - deploy
+  - .postnotify
+
+#before_script:
+  
+notify-github-pending:
+  stage: .prenotify
+  when: always
+  script:
+    - .ci/notify_github.sh pending
+
+deploy2prod:
+  stage: deploy
+  environment: production
+  script:
+    - "echo Vorherige Dateien:"
+    - ls -la $PROD_ZIEL
+    - echo Lösche alte Dateien am '${PROD_ZIEL}' ...
+    - rm -r ${PROD_ZIEL}* || echo "Keine Dateien vorhanden"
+    - echo Deploye Webseite nach '${PROD_ZIEL}' ...
+    - cp -r * $PROD_ZIEL
+    - echo "Passe Rechte auf (www-data) an..."
+    - "chown -R 33: $PROD_ZIEL"
+    - "echo Endstand am Ziel:"
+    - ls -la $PROD_ZIEL
+  only:
+    - master
+  tags:
+    - mvweb1
+
+
+test:
+  stage: testsyntax
+  script:
+    - hugo -v
+  tags:
+    - mvweb1
+
+
+notify-github-success:
+  stage: .postnotify
+  when: on_success
+  script:
+    - .ci/notify_github.sh success
+
+notify-github-failure:
+  stage: .postnotify
+  when: on_failure
+  script:
+    - .ci/notify_github.sh failure
