@@ -41,9 +41,11 @@ deploy2prod:
 test:
   stage: testsyntax
   script:
-    - hugo -v
-  tags:
-    - mvweb1
+    - echo "Prüfe xml Syntax"
+    - apk add --update --no-cache libxml2-utils
+    - xmllint --noout source/*/*.xml
+    - xmllint --noout webroot/*/*.xml
+    - xmllint --noout webroot/*/*/*.xml
 
 
 notify-github-success:
