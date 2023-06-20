@@ -16,6 +16,8 @@ notify-github-pending:
   stage: .prenotify
   when: always
   script:
+    - ls -la
+    - ls -la .ci/
     - .ci/notify_github.sh pending
 
 deploy2prod:
