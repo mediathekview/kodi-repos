@@ -1,0 +1,55 @@
+name: Refresh Repository
+on:
+  workflow_dispatch:
+
+jobs:
+  RefreshAddon_leia_dev:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/refreshKodiAddon.yml
+    with:
+      target_app_owner: "mediathekview"
+      target_app: "plugin.video.mediathekview"
+      target_app_branch: "develop"
+      target_kodi_version_name: "webroot"
+      target_kodi_python_version: "2.25.0"
+      repository_package_folder: "repo-alfa"
+      
+  RefreshAddon_matrix_dev:
+    needs: RefreshAddon_leia_dev
+    permissions:
+      contents: write
+    uses: ./.github/workflows/refreshKodiAddon.yml
+    with:
+      target_app_owner: "mediathekview"
+      target_app: "plugin.video.mediathekview"
+      target_app_branch: "develop"
+      target_kodi_version_name: "webroot"
+      target_kodi_python_version: "3.0.0"
+      repository_package_folder: "repo-beta"
+
+  RefreshAddon_leia_prod:
+    needs: RefreshAddon_matrix_dev
+    permissions:
+      contents: write
+    uses: ./.github/workflows/refreshKodiAddon.yml
+    with:
+      target_app_owner: "mediathekview"
+      target_app: "plugin.video.mediathekview"
+      target_app_branch: "master"
+      target_kodi_version_name: "webroot"
+      target_kodi_python_version: "2.25.0"
+      repository_package_folder: "repo-leia"
+      
+  RefreshAddon_matrix_prod:
+    needs: RefreshAddon_leia_prod
+    permissions:
+      contents: write
+    uses: ./.github/workflows/refreshKodiAddon.yml
+    with:
+      target_app_owner: "mediathekview"
+      target_app: "plugin.video.mediathekview"
+      target_app_branch: "master"
+      target_kodi_version_name: "webroot"
+      target_kodi_python_version: "3.0.0"
+      repository_package_folder: "repo-matrix"
