@@ -65,11 +65,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install libxml2-utils xmlstarlet zip
 
+      # fix py2/3
+      - name: Remove py2 update script for Kodi19++
+        if: inputs.target_kodi_python_version == '3.0.0' 
+        run: |
+          rm ${{ inputs.target_app }}/mvupdate
+
+      # fix py2/3
+      - name: Remove py3 update script for Kodi18
+        if: inputs.target_kodi_python_version != '3.0.0'
+        run: |
+          rm ${{ inputs.target_app }}/mvupdate3
+      
       # create release artefacts
       - name: Create Release Artefacts
         run: |
           SRC_PATH="${{ inputs.target_app }}"
           TGT_PATH="${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/${{ inputs.target_app }}"
+          # Remove Docker files (not needed for Kodi)
+          rm -r ${SRC_PATH}/docker
+          rm ${SRC_PATH}/Dockerfile
           # remove resource folder and add new          
           rm -r ${TGT_PATH}/resources/*
           cp -r ${SRC_PATH}/resources/*.{jpg,png} ${TGT_PATH}/resources
@@ -88,6 +103,7 @@ jobs:
           # calc md5
           md5=($(md5sum ${combindedAddonXml}))
           echo $md5 > ${combindedAddonXml}.md5
+
       # create zip file
       - name: Create Zip
         id: zip
