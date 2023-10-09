@@ -1,0 +1,117 @@
+name: Refresh Kodi Addon Package
+
+on:
+  workflow_call:
+    inputs:
+      target_app_owner:
+        description: "Repository name"
+        required: true        
+        type: string
+        default: "codingPF"
+      target_app:
+        description: "Name of the addon"
+        required: true        
+        type: string
+        default: "plugin.video.newsApp"
+      target_app_branch:
+        description: "Name of the branch"
+        required: true        
+        type: string
+        default: "master"
+      target_kodi_version_name:
+        description: "Name of the Kodi version (e.g. matrix)"
+        required: true        
+        type: string
+        default: "leia"
+      target_kodi_python_version:
+        description: "Name of the Kodi version (e.g. matrix)"
+        required: true        
+        type: string
+        default: "3.0.0"
+      repository_package_folder:
+        description: "Folder which contains the packages"
+        required: false
+        type: string
+        default: "zips"
+        
+
+
+jobs:
+  refreshAddonPackage:
+    name: Make a new addon package
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+      
+    steps:
+      # checkout the repository
+      - name: Checkout Add-on
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.event.repository.name }}
+          ref: main
+
+      # checkout target kodi addon
+      - name: Checkout Add-on
+        uses: actions/checkout@v3
+        with:
+          path: ${{ inputs.target_app }}
+          repository: ${{ inputs.target_app_owner }}/${{ inputs.target_app }}
+          ref: ${{ inputs.target_app_branch }}
+
+      # setup VM
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libxml2-utils xmlstarlet zip
+
+      # create release artefacts
+      - name: Create Release Artefacts
+        run: |
+          SRC_PATH="${{ inputs.target_app }}"
+          TGT_PATH="${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/${{ inputs.target_app }}"
+          # remove resource folder and add new          
+          rm -r ${TGT_PATH}/resources/*
+          cp -r ${SRC_PATH}/resources/*.{jpg,png} ${TGT_PATH}/resources
+          # fix kodi python version
+          xmlstarlet ed -L -u '/addon/requires/import[@addon="xbmc.python"]/@version' -v '${{ inputs.target_kodi_python_version }}' ${SRC_PATH}/addon.xml
+          # add addon.xml
+          rm ${TGT_PATH}/addon.xml
+          cp -r ${SRC_PATH}/addon.xml ${TGT_PATH}
+          # build new combined addons.xml
+          combindedAddonXml="${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/addons.xml"
+          rm ${combindedAddonXml}
+          echo "<?xml version='1.0' encoding='utf-8'?>" > ${combindedAddonXml}
+          echo '<addons>' >> ${combindedAddonXml}
+          xmlstarlet sel -t -m '/addon' -c '/addon' ${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/*/addon.xml >> ${combindedAddonXml}
+          echo '</addons>' >> ${combindedAddonXml}
+          # calc md5
+          md5=($(md5sum ${combindedAddonXml}))
+          echo $md5 > ${combindedAddonXml}.md5
+      # create zip file
+      - name: Create Zip
+        id: zip
+        run: |
+          # cleanup
+          mv .git ..
+          rm -rf .??*
+          rm *.md
+          # find version no
+          version=$(xmlstarlet sel -t -v 'string(/addon/@version)' addon.xml)
+          filename=${{ inputs.target_app }}-${version}.zip
+          # make zip
+          cd ..
+          zip -r $filename ${{ inputs.target_app }}
+          mv .git ${{ inputs.target_app }}
+          echo "filename=$filename" >> $GITHUB_OUTPUT
+          # copy to target release repo
+          cp $filename "${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/${{ inputs.target_app }}"
+        working-directory: ${{ inputs.target_app }}
+     
+      # commit into self (target kodi repository)
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: ${{ github.event.repository.name }}
+          message: "publish ${{ inputs.target_app }} ${{ inputs.target_app_branch }} for ${{ inputs.repository_package_folder }}"
