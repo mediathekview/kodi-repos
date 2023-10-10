@@ -128,6 +128,7 @@ jobs:
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
+          branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: ${{ github.event.repository.name }}
           message: "publish ${{ inputs.target_app }} ${{ inputs.target_app_branch }} for ${{ inputs.repository_package_folder }}"
