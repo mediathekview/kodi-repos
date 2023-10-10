@@ -96,7 +96,7 @@ jobs:
           # build new combined addons.xml
           combindedAddonXml="${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/addons.xml"
           rm ${combindedAddonXml}
-          echo "<?xml version='1.0' encoding='utf-8'?>" > ${combindedAddonXml}
+          echo '<?xml version="1.0" encoding="utf-8"?>' > ${combindedAddonXml}
           echo '<addons>' >> ${combindedAddonXml}
           xmlstarlet sel -t -m '/addon' -c '/addon' ${{ github.event.repository.name }}/${{ inputs.target_kodi_version_name }}/${{ inputs.repository_package_folder }}/*/addon.xml >> ${combindedAddonXml}
           echo '</addons>' >> ${combindedAddonXml}
