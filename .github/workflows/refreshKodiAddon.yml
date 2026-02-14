@@ -39,7 +39,7 @@ on:
 jobs:
   refreshAddonPackage:
     name: Make a new addon package
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       
